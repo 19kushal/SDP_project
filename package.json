@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "forever --minUptime 5000 --spinSleepTime 3000 start index.js",
+    "index": "pm2 start index.js --watch"
   },
   "author": "Kushal Hawaldar",
   "license": "ISC",
