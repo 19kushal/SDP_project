@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "MyApp",
-      "script": "index.js"
+      "script": " nodemon index.js"
     }
   ]
 }
