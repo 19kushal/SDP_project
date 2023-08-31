@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Announcements</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+  <!-- style file  -->
+  <link rel="stylesheet" href="../public/css/anna.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      color: white;
+    }
+
+    .navbar {
+      color: #00ED64 !important;
+      background-color: #001E2B;
+    }
+
+    .nav-link {
+      padding: 0 2rem !important;
+      /* font-weight: 400 !important; */
+      color: #00ED64 !important;
+    }
+
+    .nav-link:hover {
+      color: #ffffff !important;
+    }
+
+    .navbar-brand {
+      font-weight: 600 !important;
+    }
+
+    .pri-head {
+      color: #00ED64;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .sec-head {
+      color: white;
+      font-weight: 200;
+      text-align: center;
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    /* announcements  */
+    #white-bg {
+      background-color: white !important;
+    }
+
+    .illu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .all-an {
+      color: #ffffff;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-head {
+      background-color: #001E2B;
+      color: #00ED64;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .main-ana {
+      background-color: #001E2B;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 20px;
+      padding: 2rem 4rem;
+      margin-bottom: 2rem;
+      margin-top: 2rem !important;
+      width: 80vw;
+      margin: auto;
+    }
+
+    .title {
+      color: #001E2B;
+      display: inline-block !important;
+      margin: 1rem 0rem;
+    }
+
+    .answer {
+      color: black;
+      font-weight: 200;
+      width: 80%;
+      font-size: 18px;
+      margin: 1rem 0rem;
+    }
+
+    .an-img {
+      border-radius: 20px;
+      width: 60vw;
+      height: 60vh;
+    }
+
+    .button {
+      background-color: #00ED64;
+      color: black;
+      padding: 6px 18px;
+      border-radius: 12px;
+    }
+
+    .button:hover {
+      cursor: pointer;
+      background-color: #00684a;
+      color: white;
+    }
+
+    .createrow {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input {
+      width: 40vw;
+    }
+
+    .andetails {
+      background-color: #ffffff;
+      border: 1px solid black;
+      border-radius: 20px;
+      padding: 1rem 3rem;
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .text {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .del {
+      height: 32px;
+      width: 32px;
+      border-radius: 20px;
+      color: #00ED64;
+      background-color: #001E2B;
+    }
+    .del:hover{
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- navbar  -->
+  <nav class="navbar navbar-expand-lg navbar-dark" id="navflex">
+    <div class="nav-left">
+      <a class="navbar-brand" href="#">Scrapers.</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse nav-right" id="navbarNavAltMarkup">
+      <div class="navbar-nav ">
+        <!-- <a class="nav-item nav-link active" href="/">Profile</a> -->
+        <a class="nav-item nav-link" href="#"
+          style="color: #001e2b !important; font-weight:600;background-color:white;border-radius: 24px;">Announcement
+          <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/ad-ntsPanel">Notice</a>
+        <a class="nav-item nav-link" href="/ad-comPanel">Complaints</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- <div class="section-head">
+    <h1> Create Announcement</h1>
+  </div> -->
+  <section class="all-an">
+    <div class="main-ana">
+      <div class="details">
+        <h4 class="pri-head">Add your Announcement</h1>
+          <form action="/ad-addAnnouncement" method="post" enctype="multipart/form-data">
+            <div class="row">
+              <div class=" col-12 mb-4 mt-3"><input type="text" class="form-control" placeholder="Title" name="title">
+              </div>
+
+              <div class="col-12 mb-4"><input type="text" class="form-control" placeholder="Content" name="content">
+              </div>
+
+              <div class=" col-12 mb-4"><input type="file" class="form-control " required="false" name="filename"></div>
+
+              <div class="col-12 mb-4"><input type="url" class="form-control " placeholder="Reference Link" name="link"></div>
+
+              <div class="row justify-content-center col-12 mt-3"><input type="submit" value="Post Announcement"
+                  class="button"></div>
+            </div>
+          </form>
+      </div>
+  </section>
+
+  <div class="section-head">
+    <h1>Announcements</h1>
+  </div>
+  <section id="all-an">
+    <% annas.forEach(announcement=>{ %>
+      <div class="main-ana">
+        <div class="andetails">
+          <div class="text">
+            <h5 class="title">Announcement Title:</h5>
+            <p class="answer">
+              <%= announcement.title %>
+            </p>
+            <h5 class="title">Description:</h5>
+            <p class="answer">
+              <%= announcement.content %>
+            </p>
+          </div>
+          <div class="delete">
+            <form action="/delete-announcement/<%= announcement._id %>" method="post">
+              <a href="">
+                <button type="submit" class="del"><i class='bx bxs-trash' color="#ffffff"></i></button>
+              </a>
+            </form>
+          </div>
+        </div>
+        <img src=".\uploads/<%= announcement.image %>" alt="image" class="an-img">
+      </div>
+      <% }) %>
+  </section>
+</body>
+<!-- box icons  -->
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<!-- bootstrap script  -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

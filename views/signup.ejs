@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- <link rel="stylesheet" href="./signup.css"> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+    <!-- internal css  -->
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #00374f !important;
+            overflow:hidden;
+        }
+        box-icon{
+            color: #00ED64;
+        }
+        .container{
+            display: flex;
+            align-items:center;
+            justify-content: space-between;
+            width: 60% !important;
+            height: 90vh;
+            width: 60vw;
+            background-color: #001E2B;
+            padding: 0 !important;
+            margin: 0;
+        }
+        .row{
+            height: 100vh;
+        }
+        .shalf{
+            width: 40%;
+            height: 70vh;
+            margin-right: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .h2head{
+            text-align: left;
+            color: #00ED64;
+        }
+        .form{
+            color: #00ED64;
+            /* display: flex;    */
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+        .form input{
+            margin: 1rem 0rem;
+            background-color:white ;
+            border: 1px solid white;
+            border-radius:6px;
+            padding: 8px;
+            width: 100%;
+        }
+        .fhalf{
+            width: 40%;
+            height: 70vh;
+            background-image: url(./images/loginbg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #submit{
+            display: block;
+            background-color: black;
+            color: white;
+            /* color: white; */
+            padding: 6px 16px !important;
+           border: 1px solid white;
+           border-radius: 14px !important;
+        }
+        #submit:hover{
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+            transition: 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <section id="land">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="container">
+                <div class="fhalf"></div>
+                <div class="shalf">
+                    <div class="title"><h2 class="h2head d-inline-block">Sign Up </h2>
+                        <span><box-icon type='solid' name='door-open' color='#ffffff'></box-icon></span>
+                    </div>
+                    
+                    <form class="form" action="/signup" method="post">
+                        <input type="text" placeholder="Name" name="name">
+                        <input type="email" placeholder="Email" name="email">
+                        <input type="number" placeholder="Contact Number" name="contact">
+                        <input type="password" placeholder="Enter a password" name="password">
+                        <label for="resiType" name="resiType">Resident Type: </label>
+                        <select name="resiType" id="resiType">
+                            <option value="Rent">Rent </option>
+                            <option value="Owned">Owned</option>
+                        </select>
+                        <label for="wing" name="wing">Select your Wing:</label>
+                        <select name="wing" id="wing" name="name">
+                            <option value="A">A wing</option>
+                            <option value="B">B wing</option>
+                            <option value="C">C wing</option>
+                        </select>
+
+                        <label for="floor">Select your Floor:</label>
+                        <select name="floor" id="floor">
+                            <option value="1">First</option>
+                            <option value="2">Second</option>
+                            <option value="3">Third</option>
+                            <option value="4">Fourth</option>
+                        </select>
+
+                        <label for="flat">Select your Flat No.:</label>
+                        <select name="flat" id="flat">
+                            <option value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                        </select>
+                        <button type="submit" id="submit">Submit</button>
+                        <p>Already have an account? <a href="/login">Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
