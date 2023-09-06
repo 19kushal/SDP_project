@@ -1,12 +1,12 @@
 {
-  "name": "sem4_miniprj",
+  "name": "SDP Project",
   "version": "1.0.0",
   "description": "Residential Management Portal",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "forever --minUptime 5000 --spinSleepTime 3000 start index.js",
-    "index": "pm2 start index.js --watch"
+   "start": "nodemon index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kushal Hawaldar",
   "license": "ISC",
